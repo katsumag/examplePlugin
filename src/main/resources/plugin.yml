@@ -1,0 +1,4 @@
+name: ExamplePlugin
+version: @version@
+main: me.katsumag.exampleplugin.ExamplePlugin
+api-version: 1.15.2

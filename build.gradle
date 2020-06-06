@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+group = 'me.katsumag'
+version = '1.0'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenLocal()
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot:1.15.2-R0.1-SNAPSHOT'
+    compile 'me.mattstudios.utils:matt-framework:1.4'
+    compile 'me.mattstudios.utils:matt-framework-gui:1.2.8'
+}
+
+shadowJar {
+    relocate 'me.mattstudios.mf', 'me.katsumag.exampleplugin.mf'
+    relocate 'me.mattstudios.mfgui', 'me.katsumag.exampleplugin.mfgui'
+}
